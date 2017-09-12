@@ -19,7 +19,7 @@ $(document).ready(function(){
 	});
 
 	// MOSTRANDO SUBMENU
-	$('.navegacion .menu > .item-submenu a').click(function(){
+	$('.navegacion .menu > .item-submenu a').not('.item-subsubmenu a').click(function(){
 		
 		var positionMenu = $(this).parent().attr('menu'); // Buscamos el valor del atributo menu y lo guardamos en una variable
 		console.log(positionMenu); 
@@ -36,11 +36,10 @@ $(document).ready(function(){
 	});
 
 	// MOSTRANDO SUB-SUBMENU
-	$('.navegacion .menu > .item-subsubmenu a').click(function(){
-		
+	$('.navegacion .menu > .item-submenu > .submenu .item-subsubmenu a').click(function(){
+
 		var positionMenu = $(this).parent().attr('menu'); // Buscamos el valor del atributo menu y lo guardamos en una variable
 		console.log(positionMenu); 
-
 		$('.item-subsubmenu[menu='+positionMenu+'] .subsubmenu').css({'left':'0px'}); // Mostramos El sub-submenu correspondiente
 
 	});
